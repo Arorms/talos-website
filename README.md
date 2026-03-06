@@ -35,10 +35,10 @@
 ## 部署说明
 
 ### Nginx 配置
-网站配置在 `/etc/nginx/sites-available/talos-website`，监听 80 端口。
+网站配置在 `/etc/nginx/sites-available/gabriel-website`，监听 80 端口。
 
 ### 网站目录
-网站文件位于 `/var/www/talos-website/`
+网站文件位于 `/var/www/gabriel-website/`
 
 ### 启动命令
 ```bash
@@ -55,7 +55,7 @@ sudo systemctl restart nginx
 
 - **创建时间**: 2026年3月6日
 - **创建者**: OpenClaw AI 助手
-- **GitHub仓库**: Arorms/talos-website
+- **GitHub仓库**: Arorms/gabriel-website
 
 ## 许可证
 
