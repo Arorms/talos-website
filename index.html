@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talos 服务器介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .server-stats {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-server text-2xl"></i>
+                    <h1 class="text-2xl font-bold">Talos 服务器</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-gray-200 transition">关于</a>
+                    <a href="#specs" class="hover:text-gray-200 transition">规格</a>
+                    <a href="#services" class="hover:text-gray-200 transition">服务</a>
+                    <a href="#contact" class="hover:text-gray-200 transition">联系</a>
+                </div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">欢迎来到 Talos 服务器</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">高性能服务器，为开发者和创作者提供稳定可靠的服务</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#specs" class="bg-white text-purple-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">查看规格</a>
+                <a href="#services" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition">探索服务</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于服务器 -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">关于 Talos</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">什么是 Talos？</h3>
+                    <p class="text-gray-600 mb-4">
+                        Talos 是一台高性能服务器，位于亚洲/上海时区，为各种Web应用、API服务和开发项目提供稳定的运行环境。
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        服务器名称来源于希腊神话中的青铜巨人塔洛斯，象征着力量、保护和自动化。
+                    </p>
+                    <div class="flex items-center space-x-4 mt-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-purple-600"></i>
+                            <span>时区: Asia/Shanghai</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-calendar text-purple-600"></i>
+                            <span>上线时间: 2026年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-xl">
+                    <h4 class="text-xl font-semibold mb-4">服务器特色</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>24/7 不间断运行</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>自动备份与监控</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>多语言开发环境支持</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>GitHub集成与自动化部署</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务器规格 -->
+    <section id="specs" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">技术规格</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 硬件规格 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-microchip text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">硬件配置</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">操作系统</span>
+                            <span class="font-medium">Linux 6.8.0</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">架构</span>
+                            <span class="font-medium">x86_64</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">Shell</span>
+                            <span class="font-medium">Zsh</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">Node.js</span>
+                            <span class="font-medium">v22.22.0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 网络服务 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-network-wired text-4xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">网络服务</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">Web服务器</span>
+                            <span class="font-medium">Nginx</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">主端口</span>
+                            <span class="font-medium">8000</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">HTTPS</span>
+                            <span class="font-medium">443端口</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">数据库</span>
+                            <span class="font-medium">MySQL/PostgreSQL</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 开发环境 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-code text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">开发环境</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">Node.js (NVM)</span>
+                            <span class="font-medium">✓ 已安装</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">Rust (Cargo)</span>
+                            <span class="font-medium">✓ 已安装</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">.NET</span>
+                            <span class="font-medium">✓ 已安装</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">Go语言</span>
+                            <span class="font-medium">✓ 已安装</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 运行中的服务 -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">运行中的服务</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WordPress博客 -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-wordpress text-3xl text-blue-700 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold">WordPress博客</h3>
+                            <p class="text-gray-600 text-sm">内容管理系统</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        个人技术博客，分享开发经验和技术文章。
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://blog.arorms.cn" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            访问博客 <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- OpenClaw AI助手 -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-xl border border-green-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-robot text-3xl text-green-700 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold">OpenClaw AI助手</h3>
+                            <p class="text-gray-600 text-sm">智能自动化助手</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        基于OpenClaw框架的AI助手，提供自动化任务处理、GitHub集成等功能。
+                    </p>
+                    <div class="mt-4">
+                        <span class="text-green-600 font-medium">当前在线</span>
+                    </div>
+                </div>
+
+                <!-- 开发项目 -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-xl border border-orange-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-project-diagram text-3xl text-orange-700 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold">开发项目</h3>
+                            <p class="text-gray-600 text-sm">多个活跃项目</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        HSI-SYSTEM（高光谱图像分析系统）等TypeScript项目正在开发中。
+                    </p>
+                    <div class="mt-4">
+                        <span class="text-orange-600 font-medium">7个GitHub星标</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="py-16 server-stats text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-lg">运行时间</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">6+</div>
+                    <div class="text-lg">开发语言</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">10+</div>
+                    <div class="text-lg">运行服务</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <div class="text-lg">可用性</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">联系与支持</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">联系方式</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-user text-purple-600"></i>
+                                <div>
+                                    <div class="font-medium">管理员</div>
+                                    <div class="text-gray-600">Cacciatore</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-github text-gray-800"></i>
+                                <div>
+                                    <div class="font-medium">GitHub</div>
+                                    <a href="https://github.com/HolmesAmzish" target="_blank" class="text-blue-600 hover:underline">@HolmesAmzish</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-red-500"></i>
+                                <div>
+                                    <div class="font-medium">邮箱</div>
+                                    <div class="text-gray-600">holmesamzish86@outlook.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">技术栈</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Rust</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">.NET</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Go</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Nginx</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-200 text-center">
+                    <p class="text-gray-600">
+                        此网站由 OpenClaw AI 助手自动创建并部署，展示了 Talos 服务器的能力和配置。
+                    </p>
+                    <p class="text-gray-500 text-sm mt-2">
+                        最后更新: 2026年3月6日 | 服务器状态: <span class="text-green-600 font-medium">在线</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row
