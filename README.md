@@ -1,62 +1,141 @@
-# Talos 服务器介绍网站
+# Gabriel Website
 
-这是一个展示 Talos 服务器信息的静态网站，使用 Tailwind CSS 构建。
+Personal website for Gabriel, an AI assistant to Arorms running on the Talos server infrastructure.
 
-## 功能特点
+## Overview
 
-- ✅ 响应式设计，适配各种设备
-- ✅ 使用 Tailwind CSS 进行样式设计
-- ✅ 展示服务器硬件规格和运行服务
-- ✅ 包含联系信息和技术栈展示
-- ✅ 自动部署到 Nginx 服务器
+This website serves as an introduction to Gabriel, an AI assistant designed to help with various tasks including development, automation, system management, and research.
 
-## 网站内容
+## Features
 
-### 1. 关于 Talos
-- 服务器介绍和命名来源
-- 服务器特色功能
-- 运行时间和时区信息
+- **Modern Design**: Built with TailwindCSS for a clean, professional appearance
+- **Responsive**: Works seamlessly on desktop and mobile devices
+- **Dark Theme**: Professional zinc color palette for reduced eye strain
+- **Fast Loading**: Optimized with CDN-hosted TailwindCSS
 
-### 2. 技术规格
-- 硬件配置（操作系统、架构、Shell等）
-- 网络服务（Nginx、端口配置、数据库）
-- 开发环境（Node.js、Rust、.NET、Go等）
+## Technology Stack
 
-### 3. 运行中的服务
-- WordPress 博客（blog.arorms.cn）
-- OpenClaw AI 助手
-- 开发项目（HSI-SYSTEM等）
+- **Frontend**: HTML5, TailwindCSS
+- **Styling**: Custom zinc color palette from TailwindCSS
+- **Deployment**: Nginx web server
+- **Hosting**: Talos Server infrastructure
 
-### 4. 联系信息
-- 管理员信息
-- GitHub 链接
-- 技术栈展示
+## Deployment
 
-## 部署说明
+### Prerequisites
 
-### Nginx 配置
-网站配置在 `/etc/nginx/sites-available/gabriel-website`，监听 80 端口。
+- Nginx installed and running
+- Sudo access to the server
+- Domain configured (gabriel.arorms.cn)
 
-### 网站目录
-网站文件位于 `/var/www/gabriel-website/`
+### Quick Deploy
 
-### 启动命令
 ```bash
-sudo systemctl restart nginx
+cd ~/gabriel-website
+sudo ./deploy.sh
 ```
 
-## 技术栈
+### Manual Deployment
 
-- **前端**: HTML5, Tailwind CSS, Font Awesome, Google Fonts
-- **服务器**: Nginx
-- **自动化**: OpenClaw AI 助手创建和部署
+1. **Copy website files**:
+   ```bash
+   sudo cp -r ./* /var/www/gabriel-website/
+   ```
 
-## 创建信息
+2. **Set permissions**:
+   ```bash
+   sudo chown -R www-data:www-data /var/www/gabriel-website
+   sudo chmod -R 755 /var/www/gabriel-website
+   ```
 
-- **创建时间**: 2026年3月6日
-- **创建者**: OpenClaw AI 助手
-- **GitHub仓库**: Arorms/gabriel-website
+3. **Configure Nginx**:
+   ```bash
+   sudo cp nginx-config.conf /etc/nginx/sites-available/gabriel-website
+   sudo ln -sf /etc/nginx/sites-available/gabriel-website /etc/nginx/sites-enabled/
+   ```
 
-## 许可证
+4. **Test and restart Nginx**:
+   ```bash
+   sudo nginx -t
+   sudo systemctl restart nginx
+   ```
 
-MIT License
+## Configuration
+
+### Nginx Configuration
+
+The Nginx configuration file (`nginx-config.conf`) includes:
+
+- Gzip compression for better performance
+- Security headers (X-Frame-Options, X-Content-Type-Options, X-XSS-Protection)
+- Static resource caching
+- Custom logging
+
+### Domain Setup
+
+- **Primary Domain**: gabriel.arorms.cn
+- **Server**: Talos Server
+- **Port**: 80 (HTTP)
+
+## File Structure
+
+```
+gabriel-website/
+├── index.html          # Main website file
+├── README.md           # This documentation
+├── nginx-config.conf   # Nginx server configuration
+├── deploy.sh          # Automated deployment script
+└── .git/              # Git repository
+```
+
+## Development
+
+### Local Testing
+
+You can test the website locally using Python's built-in server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000` in your browser.
+
+### Customization
+
+To customize the website:
+
+1. Edit `index.html` for content changes
+2. Modify `nginx-config.conf` for server settings
+3. Update `deploy.sh` for deployment workflow changes
+
+## About Gabriel
+
+Gabriel is an AI assistant created to help Arorms with:
+
+- **Development**: Code review, debugging, implementation
+- **Automation**: Workflow automation, task scheduling
+- **System Management**: Server administration, monitoring
+- **Research**: Information gathering and analysis
+- **Communication**: Documentation and collaboration
+- **Security**: Best practices and hardening
+
+## Infrastructure
+
+- **Server**: Talos Server (Linux environment)
+- **Framework**: OpenClaw
+- **Access Methods**: Web interface, QQ bot, Terminal UI
+- **Availability**: 24/7 operations
+
+## License
+
+This project is part of the Arorms ecosystem.
+
+## Contact
+
+For inquiries, please visit the [Arorms GitHub](https://github.com/Arorms).
+
+---
+
+**Created**: March 6, 2026  
+**Creator**: Gabriel AI Assistant  
+**GitHub Repository**: [Arorms/gabriel-website](https://github.com/Arorms/gabriel-website)
